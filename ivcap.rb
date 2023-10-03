@@ -5,20 +5,20 @@
 class Ivcap < Formula
   desc ""
   homepage "https://github.com/ivcap-works/ivcap-cli"
-  version "0.28.1"
+  version "0.28.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.1/ivcap-cli_0.28.1_darwin_arm64.tar.gz"
-      sha256 "cd863ef90c8a017e68b98bd69b5befad7216cbb44354331b66d67af4d57a022b"
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.2/ivcap-cli_0.28.2_darwin_arm64.tar.gz"
+      sha256 "516b391599030a64ad2c2f4ceee590382384b76069c2b02ce3bc4f6ac4ffe15d"
 
       def install
         bin.install "ivcap"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.1/ivcap-cli_0.28.1_darwin_amd64.tar.gz"
-      sha256 "3d9b96ee66bca772b09f1b0d50c0729936645154320c4da07f2181aea4d970a8"
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.2/ivcap-cli_0.28.2_darwin_amd64.tar.gz"
+      sha256 "b6c3a501df5f93fdd2012ec66b54dbf5425dda366687ee635c168420601d7114"
 
       def install
         bin.install "ivcap"
@@ -28,16 +28,16 @@ class Ivcap < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.1/ivcap-cli_0.28.1_linux_arm64.tar.gz"
-      sha256 "f959636d7f5e8e4e83962ccf42ac77079830e0c36ac6eb44e130116d4327563e"
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.2/ivcap-cli_0.28.2_linux_arm64.tar.gz"
+      sha256 "0278d88cd694902b3f668edda75500daf42f36e9f7e59c03ace3d9b5d7c5c238"
 
       def install
         bin.install "ivcap"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.1/ivcap-cli_0.28.1_linux_amd64.tar.gz"
-      sha256 "acec6aca23d39ef3a34d049bf540b5331addbbb6acc6093ae9a630034ae60809"
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.2/ivcap-cli_0.28.2_linux_amd64.tar.gz"
+      sha256 "f51f88ef0d4136dfb62c1bec233ee690b9f791c850dc4e592cb7a8c24b8881b6"
 
       def install
         bin.install "ivcap"
