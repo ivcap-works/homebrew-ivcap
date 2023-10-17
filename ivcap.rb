@@ -5,43 +5,28 @@
 class Ivcap < Formula
   desc ""
   homepage "https://github.com/ivcap-works/ivcap-cli"
-  version "0.28.2"
+  version "0.28.4"
+  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.2/ivcap-cli_0.28.2_darwin_arm64.tar.gz"
-      sha256 "516b391599030a64ad2c2f4ceee590382384b76069c2b02ce3bc4f6ac4ffe15d"
-
-      def install
-        bin.install "ivcap"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.2/ivcap-cli_0.28.2_darwin_amd64.tar.gz"
-      sha256 "b6c3a501df5f93fdd2012ec66b54dbf5425dda366687ee635c168420601d7114"
-
-      def install
-        bin.install "ivcap"
-      end
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.4/ivcap-cli_0.28.4_darwin_amd64.tar.gz"
+      sha256 "3cbc7c737e7bd7b8a6973aeee6565c39be57cb1db26277bfe34f0b7ddf1917a9"
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.2/ivcap-cli_0.28.2_linux_arm64.tar.gz"
-      sha256 "0278d88cd694902b3f668edda75500daf42f36e9f7e59c03ace3d9b5d7c5c238"
-
-      def install
-        bin.install "ivcap"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.2/ivcap-cli_0.28.2_linux_amd64.tar.gz"
-      sha256 "f51f88ef0d4136dfb62c1bec233ee690b9f791c850dc4e592cb7a8c24b8881b6"
-
-      def install
-        bin.install "ivcap"
-      end
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.4/ivcap-cli_0.28.4_linux_amd64.tar.gz"
+      sha256 "f36e6185e95bce3d04b0819562267f108017657150e9830c5d0695495157141a"
     end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.4/ivcap-cli_0.28.4_linux_arm64.tar.gz"
+      sha256 "79c07e41adf5957ea0663501b6b0aeddfe5e0c97ea7232417cc3f26bed9a6245"
+    end
+  end
+
+  def install
+    bin.install "ivcap-cli"
   end
 end
