@@ -5,28 +5,43 @@
 class Ivcap < Formula
   desc ""
   homepage "https://github.com/ivcap-works/ivcap-cli"
-  version "0.28.4"
-  bottle :unneeded
+  version "0.28.5"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.5/ivcap-cli_0.28.5_darwin_arm64.tar.gz"
+      sha256 "143210ba5cd936d1ae07a7c3071cf94006a5cdb3211a45ade7bd6b61c6a6f63e"
+
+      def install
+        bin.install "ivcap"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.4/ivcap-cli_0.28.4_darwin_amd64.tar.gz"
-      sha256 "3cbc7c737e7bd7b8a6973aeee6565c39be57cb1db26277bfe34f0b7ddf1917a9"
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.5/ivcap-cli_0.28.5_darwin_amd64.tar.gz"
+      sha256 "8316fcb2f23fc950b01ba740cea92b505af7a452f50de337b17834297f6961e1"
+
+      def install
+        bin.install "ivcap"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.4/ivcap-cli_0.28.4_linux_amd64.tar.gz"
-      sha256 "f36e6185e95bce3d04b0819562267f108017657150e9830c5d0695495157141a"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.4/ivcap-cli_0.28.4_linux_arm64.tar.gz"
-      sha256 "79c07e41adf5957ea0663501b6b0aeddfe5e0c97ea7232417cc3f26bed9a6245"
-    end
-  end
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.5/ivcap-cli_0.28.5_linux_arm64.tar.gz"
+      sha256 "92570177cf963c39897a175a14e4791d41a8aed918f1e2c430a76ed853d12a19"
 
-  def install
-    bin.install "ivcap-cli"
+      def install
+        bin.install "ivcap"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.28.5/ivcap-cli_0.28.5_linux_amd64.tar.gz"
+      sha256 "b835a3830c2f955eb1f2718bdd6f528e5c4935419a4806cada7bf9532e651494"
+
+      def install
+        bin.install "ivcap"
+      end
+    end
   end
 end
