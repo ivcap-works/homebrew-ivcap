@@ -5,20 +5,20 @@
 class Ivcap < Formula
   desc ""
   homepage "https://github.com/ivcap-works/ivcap-cli"
-  version "0.31.3"
+  version "0.35.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.31.3/ivcap-cli_0.31.3_darwin_arm64.tar.gz"
-      sha256 "f960206b1677e9040746b5e0f0e03a349e1cc48f24543a7230fec16346c91b7c"
+    if Hardware::CPU.intel?
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.35.0/ivcap-cli_0.35.0_darwin_amd64.tar.gz"
+      sha256 "b80c0640a1b8f771ba79a3d59d37de7b7b71eebd918aa770a20afa68031bd68d"
 
       def install
         bin.install "ivcap"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.31.3/ivcap-cli_0.31.3_darwin_amd64.tar.gz"
-      sha256 "b74ed453a40f44570400720deebad16115638d8d71b4ff169d7b642b209748a6"
+    if Hardware::CPU.arm?
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.35.0/ivcap-cli_0.35.0_darwin_arm64.tar.gz"
+      sha256 "41294001a1424ff4ff680978540fc28fae7118efaec1e6f11273685c204561a4"
 
       def install
         bin.install "ivcap"
@@ -27,17 +27,17 @@ class Ivcap < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.31.3/ivcap-cli_0.31.3_linux_arm64.tar.gz"
-      sha256 "a0e85a49d7a8ef41a0b002ca081a82111d7c34274c624d6aaa649d4d3cd64fa0"
+    if Hardware::CPU.intel?
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.35.0/ivcap-cli_0.35.0_linux_amd64.tar.gz"
+      sha256 "c9d9596e08afb1debe856d8ad96504d0d72a57d61d40751c8cb015071afe3d70"
 
       def install
         bin.install "ivcap"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.31.3/ivcap-cli_0.31.3_linux_amd64.tar.gz"
-      sha256 "4000ec2561b833bb06cc5ba885c4d684337bc12545a6379ead5e87b1a8a19a02"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.35.0/ivcap-cli_0.35.0_linux_arm64.tar.gz"
+      sha256 "4cf0eada78bf945bc0a7d0d65fa97797bd29c222a14f4ca4b37e3dc7174b85de"
 
       def install
         bin.install "ivcap"
