@@ -5,42 +5,46 @@
 class Ivcap < Formula
   desc ""
   homepage "https://github.com/ivcap-works/ivcap-cli"
-  version "0.47.1"
+  version "0.47.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.1/ivcap-cli_0.47.1_darwin_amd64.tar.gz"
-      sha256 "2c11a0959487696866821924eacfcd6ccfa61ab8ca1785f66bb661b9c8e85afd"
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.2/ivcap-cli_0.47.2_darwin_amd64.tar.gz"
+      sha256 "5b2e64cfcb279a750606bbd2700844f45856f03a0ff071d55abe48c9f1ac0819"
 
       def install
         bin.install "ivcap"
+        man1.install Dir["doc/*.1"]
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.1/ivcap-cli_0.47.1_darwin_arm64.tar.gz"
-      sha256 "0ef1d3047c8a69a6e0010457af6c70d99824aa645cf467a83d0eeadde3e0b39a"
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.2/ivcap-cli_0.47.2_darwin_arm64.tar.gz"
+      sha256 "a2f320dbb8d6b7d454e7ec006e5a2a2478317c1ee8d9a45c066f17c59b282530"
 
       def install
         bin.install "ivcap"
+        man1.install Dir["doc/*.1"]
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.1/ivcap-cli_0.47.1_linux_amd64.tar.gz"
-      sha256 "332cf3ec3895279f5780d6d2b50f878a0307cf6417d1b09670a62287e19e4174"
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.2/ivcap-cli_0.47.2_linux_amd64.tar.gz"
+      sha256 "60d6c3f2c1cbd9a38c952cf88640cde664a1f92c4c1b1f3d4b8db0f05b21dff1"
 
       def install
         bin.install "ivcap"
+        man1.install Dir["doc/*.1"]
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.1/ivcap-cli_0.47.1_linux_arm64.tar.gz"
-      sha256 "7471ed6e34ed3cf57bc8760854fc122aa2b675cdc3cb8acf1bd0d591478805e2"
+      url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.2/ivcap-cli_0.47.2_linux_arm64.tar.gz"
+      sha256 "bd6b5657b4050315a7d47610c2a2f875f7efa308249961ebac8edd747319662b"
 
       def install
         bin.install "ivcap"
+        man1.install Dir["doc/*.1"]
       end
     end
   end
