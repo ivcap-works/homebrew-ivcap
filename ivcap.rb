@@ -10,7 +10,7 @@ class Ivcap < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.6/ivcap-cli_0.47.6_darwin_amd64.tar.gz"
-      sha256 "6e5c286aa707542873d5a1c9346f6ef1bfdfeec2c79ad645e4098db5b7a2aed4"
+      sha256 "c98b26817176a11bc8e9e8f1d738ab02bd45ea61b6ddfe0d1fe8bf2d9cb3ed49"
 
       def install
         bin.install "ivcap"
@@ -19,7 +19,7 @@ class Ivcap < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.6/ivcap-cli_0.47.6_darwin_arm64.tar.gz"
-      sha256 "5e15ff11fd685b86d6abe01f154ce7d64c0439f167720bf1872dd7336a105506"
+      sha256 "651ca7a6d2cf36164881746fc291ac2c6f091ed8e36969ebcf769f3b2348f4e9"
 
       def install
         bin.install "ivcap"
@@ -31,7 +31,7 @@ class Ivcap < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.6/ivcap-cli_0.47.6_linux_amd64.tar.gz"
-      sha256 "f9afee30482523ddea53e317017dc3ed98b8c51b95cf083da755fbf13788e58f"
+      sha256 "74a5df01e6ee8b9f0d92da9e5bd207babf56e65e845e978d45fcbfb78d4ec5d8"
 
       def install
         bin.install "ivcap"
@@ -40,7 +40,7 @@ class Ivcap < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/ivcap-works/ivcap-cli/releases/download/v0.47.6/ivcap-cli_0.47.6_linux_arm64.tar.gz"
-      sha256 "12c0906c0f19fea2c74016777477d49b2ef364cae193d5f1b668e4ec1ba30782"
+      sha256 "a398f3ac83c9aeb2b99475e8991b7012bdfe4c1ff5a2993cc63c409fb3fbaefe"
 
       def install
         bin.install "ivcap"
